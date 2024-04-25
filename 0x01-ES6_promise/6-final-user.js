@@ -3,7 +3,7 @@ import uploadPhoto from './5-photo-reject';
 
 export default function handleProfileSignup(firstName, lastName, fileName) {
   const array = [];
-  Promise.all([signUpUser(firstName, lastName), uploadPhoto(fileName)])
+  return Promise.all([signUpUser(firstName, lastName), uploadPhoto(fileName)])
     .then((values) => {
       for (const result of values) {
         array.push({
@@ -11,10 +11,9 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
           value: result.status,
         });
       }
-    }).finally(() => {
-      console.log(array);
       return array;
-    }).catch((err) => {
+    })
+    .catch((err) => {
       array.push({
         status: 'rejected',
         value: err,
