@@ -7,7 +7,6 @@ export default function guardrail(mathFunction) {
     queue.push(message);
   } finally {
     queue.push('Guardrail was processed');
-    // eslint-disable-next-line
-    return queue;
   }
+  return queue;
 }
