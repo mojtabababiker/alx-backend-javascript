@@ -41,7 +41,7 @@ export default class HolbertonCourse {
   }
 
   set length(value) {
-    HolbertonCourse.validate(value, 'integer', 'Length must be a number');
+    HolbertonCourse.validate(value, 'number', 'Length must be a number');
     this._length = value;
   }
 
