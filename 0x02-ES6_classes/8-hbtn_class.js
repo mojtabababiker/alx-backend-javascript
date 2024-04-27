@@ -38,10 +38,12 @@ export default class HolbertonClass {
   }
 
   // customize primitive casting values
+  // eslint-disable-next-line
   [Symbol.toPrimitive](type) {
     if (type === 'number') {
       return this._size;
-    } else if (type === 'string') {
+    }
+    if (type === 'string') {
       return this._location;
     }
   }
