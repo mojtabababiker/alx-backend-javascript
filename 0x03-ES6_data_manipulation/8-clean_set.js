@@ -14,5 +14,16 @@ export default function cleanSet(set, startString) {
   if (result.length === 0) {
     return '';
   }
-  return result.join('-');
+  return result.reduce((sum, current, idx) => {
+    if (current === undefined || current.length === 0) {
+      return sum;
+    }
+    if (idx >= result.length) {
+      return sum;
+    }
+    if (sum.length === 0) {
+      return current;
+    }
+    return `${sum}-${current}`;
+  }, '');
 }
