@@ -1,12 +1,16 @@
 export default function cleanSet(set, startString) {
   const result = [];
 
+  if (!set || !startString) {
+    return '';
+  }
+
   if (startString.length === 0 || !(set instanceof Set)) {
     return '';
   }
 
   set.forEach((val) => {
-    if (val.startsWith(startString)) {
+    if (val && val.startsWith(startString)) {
       result.push(val.slice(startString.length));
     }
   });
@@ -14,7 +18,9 @@ export default function cleanSet(set, startString) {
   if (result.length === 0) {
     return '';
   }
-  return result.reduce((sum, current, idx) => {
+  return result.join('-');
+  /*
+  result.reduce((sum, current, idx) => {
     if (current === undefined || current.length === 0) {
       return sum;
     }
@@ -26,4 +32,5 @@ export default function cleanSet(set, startString) {
     }
     return `${sum}-${current}`;
   }, '');
+  */
 }
