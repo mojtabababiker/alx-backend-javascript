@@ -32,7 +32,7 @@ const app = http.createServer((req, res) => {
       for (const field in fieldStudent) {
         if (Object.prototype.hasOwnProperty.call(fieldStudent, field)) {
           const students = fieldStudent[field];
-          res.write(`\nNumber of students in ${field}: ${students.length} List: ${students.join(', ')}`);
+          res.write(`\nNumber of students in ${field}: ${students.length}. List: ${students.join(', ')}`);
         }
       }
       res.end();
