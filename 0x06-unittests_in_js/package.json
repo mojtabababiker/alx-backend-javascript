@@ -4,7 +4,7 @@
   "description": "## Resources Read or watch: - Mocha documentation - Chai - Sinon - Express - Request - How to Test NodeJS Apps using Mocha, Chai and SinonJS",
   "main": "0-calcul.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "",
