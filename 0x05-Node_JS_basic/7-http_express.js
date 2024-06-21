@@ -9,7 +9,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', (req, res) => {
-  res.write('This is the list of our students');
   const path = process.argv[2];
   res.write('This is the list of our students');
   fs.readFile(path, 'utf-8', (error, data) => {
