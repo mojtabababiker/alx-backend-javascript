@@ -5,3 +5,4 @@ export const app = express();
 registerRoutes(app);
 
 app.listen(1245);
+export default app;
